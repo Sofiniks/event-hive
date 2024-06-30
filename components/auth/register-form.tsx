@@ -6,7 +6,7 @@ import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
-import { register } from "@/app/actions/register";
+import { register } from "@/actions/register";
 import { RegisterSchema } from "@/schemas";
 import { FormError } from "./form-error";
 import { FormSuccess } from "./form-success";
@@ -85,7 +85,7 @@ export function RegisterForm() {
                   type="name"
                   {...form.register("name")}
                   className="block w-full px-3 py-3 border-none rounded-md placeholder-gray-400 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-                  placeholder="Enter your email"
+                  placeholder="Enter your name"
                 />
                 {form.formState.errors.name && (
           <p className="mt-1 text-sm text-red-600">{form.formState.errors.name.message}</p>
