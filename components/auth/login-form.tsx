@@ -94,9 +94,9 @@ export function LoginForm() {
                 <label htmlFor="password" className={`block text-sm font-medium ${form.formState.errors.password ? 'text-red-600' : 'text-gray-700'}`}>
                   PASSWORD
                 </label>
-                <a href="#" className="text-sm text-indigo-600 hover:text-indigo-500">
+                <Link href="/auth/reset" className="text-sm text-indigo-600 hover:text-indigo-500">
                   Forgot your password?
-                </a>
+                </Link>
               </div>
               <div className="mt-1">
                 <input
