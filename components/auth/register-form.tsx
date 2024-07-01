@@ -10,7 +10,7 @@ import { register } from "@/actions/register";
 import { RegisterSchema } from "@/schemas";
 import { FormError } from "./form-error";
 import { FormSuccess } from "./form-success";
-import { FcGoogle } from "react-icons/fc";
+import { GoogleSignupButton } from "./google-signup-button";
 
 export function RegisterForm() {
   const searchParams = useSearchParams();
@@ -86,6 +86,7 @@ export function RegisterForm() {
                   {...form.register("name")}
                   className="block w-full px-3 py-3 border-none rounded-md placeholder-gray-400 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Enter your name"
+                  disabled={isPending}
                 />
                 {form.formState.errors.name && (
           <p className="mt-1 text-sm text-red-600">{form.formState.errors.name.message}</p>
@@ -103,6 +104,7 @@ export function RegisterForm() {
                   {...form.register("email")}
                   className="block w-full px-3 py-3 border-none rounded-md placeholder-gray-400 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Enter your email"
+                  disabled={isPending}
                 />
                 {form.formState.errors.email && (
           <p className="mt-1 text-sm text-red-600">{form.formState.errors.email.message}</p>
@@ -122,6 +124,7 @@ export function RegisterForm() {
                   {...form.register("password")}
                   className="block w-full px-3 py-3 border-none rounded-md placeholder-gray-400 text-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   placeholder="Enter your password"
+                  disabled={isPending}
                 />
                 {form.formState.errors.password && (
           <p className="mt-1 text-sm text-red-600">{form.formState.errors.password.message}</p>
@@ -142,13 +145,7 @@ export function RegisterForm() {
               <span className="text-gray-500">Or</span>
             </div>
             <div className="flex items-center justify-center">
-              <button
-                type="button"
-                className="group relative flex justify-center py-3 px-[80px] border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500"
-              >
-                <FcGoogle className="h-5 w-5 mr-2" />
-                Sign up with Google
-              </button>
+            <GoogleSignupButton callbackUrl={callbackUrl}/>
             </div>
           </form>
         </div>

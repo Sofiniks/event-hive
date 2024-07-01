@@ -25,7 +25,7 @@ export default {
             password,
             user.password,
           );
-
+          console.log('PASSWORDS_MATCH', passwordsMatch, user);
           if (passwordsMatch) return user;
         }
 
