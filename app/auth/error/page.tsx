@@ -1,7 +1,5 @@
 const AuthError = () => {
-  return (
-    <div>Auth Error</div>
-  )
+  return <div>Auth Error</div>
 }
- 
-export default AuthError;
+
+export default AuthError
